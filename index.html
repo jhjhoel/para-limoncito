@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>para mi limoncito ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ff99cc, #ff6699);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Corazones flotantes */
+        .corazon {
+            position: absolute;
+            color: #ff3366;
+            font-size: 30px;
+            animation: flotar 5s infinite ease-in-out;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-50px); opacity: 0.7; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+
+        .corazon:nth-child(1) { left: 10%; top: 80%; animation-duration: 6s; }
+        .corazon:nth-child(2) { left: 50%; top: 90%; animation-duration: 4s; }
+        .corazon:nth-child(3) { right: 20%; top: 85%; animation-duration: 5s; }
+
+        .container {
+            position: relative;
+            width: 350px;
+            height: 500px;
+            perspective: 1000px;
+        }
+
+        .carta {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .carta.abierta {
+            transform: rotateY(180deg);
+        }
+
+        .carta .frente, .carta .contenido {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+        }
+
+        .frente {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #ffe6e6;
+            border: 3px solid #ff3366;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .frente h1 {
+            font-size: 28px;
+            color: #ff3366;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .flor {
+            width: 50px;
+            height: 50px;
+            background: pink;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .flor::before, .flor::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background: pink;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .flor::before { top: -30px; left: -10px; }
+        .flor::after { top: -10px; left: -30px; }
+
+        .flor:nth-child(1) { top: 40px; left: 30px; }
+        .flor:nth-child(2) { top: 80px; right: 40px; }
+        .flor:nth-child(3) { bottom: 40px; left: 50px; }
+
+        .contenido {
+            background: #fff;
+            border: 3px solid #ff3366;
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            overflow-y: auto;
+        }
+
+        .contenido p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .contenido::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .contenido::-webkit-scrollbar-thumb {
+            background: #ff6699;
+            border-radius: 4px;
+        }
+        .titulo{
+    
+            border-top: px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Corazones flotantes -->
+<span class="corazon">❤️</span>
+<span class="corazon">💖</span>
+<span class="corazon">💗</span>
+
+<div class="container">
+    <div class="carta" onclick="abrirCarta()">
+        <div class="frente">
+            <h1 class="titulo">💗 hacele clik amor :3💗 </h1>
+            <div class="flor"></div>
+            <div class="flor"></div>
+            <div class="flor"></div>
+        </div>
+        <div class="contenido">
+            <p>
+                Amor, tal vez no la estás pasando bien 😖 y sé que esta decisión no es fácil, pero quiero que sepas que estoy aquí para apoyarte en lo que decidas, porque sabes que yo nunca te juzgaré y tampoco pensé en hacerlo...<br><br>
+                Pero si sientes que renunciar es lo mejor para ti, entonces hazlo sin miedo JAJAJAJAJJA. Lo importante es que estés bien y tranquila. A veces cerrar una puerta es lo que necesitamos para que se abran cosas mejores...<br><br>
+                Me pongo modo poético 🧐🕵🏿‍♂️ JAJAJAJA y bueno, quiero que sepas que no estás sola en esto, ni en ninguna decisión que tomes más adelante. Si me lo permites, yo quiero estar ahí contigo en todo momento, en las buenas y en las malas 😖 porque te amo mucho y solo quiero verte feliz, porque me encanta tu sonrisa, me gusta verte sonreír...<br><br>
+                Aaahs bueno, creo que ya se hizo algo largo, pero... TE AMO MUCHO MI PRINCESA HERMOSA 💗🫂 No estés triste si es que lo estabas, tampoco sobrepienses mucho si es que lo estabas haciendo 🫠 y pues nada... Fin JAJAJAJA TE AMO
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>    
+    function abrirCarta() {
+        document.querySelector(".carta").classList.toggle("abierta");
+    }
+</script>
+
+</body>
+</html>
